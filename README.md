@@ -17,6 +17,8 @@ The chatbot allows users to upload PDF documents, ask context-aware questions, p
 * Real-Time Streaming Responses
 * Tool Calling Support
 * Interactive Streamlit Interface
+* LangSmith-Based Tracing & Monitoring
+* Interactive Streamlit Interface
 
 ### Available Tools
 
@@ -26,6 +28,12 @@ The chatbot allows users to upload PDF documents, ask context-aware questions, p
 * **Stock Price Tool** – Retrieves real-time stock prices.
 
 ---
+
+### Observability & Monitoring
+- Integrated LangSmith tracing for end-to-end workflow monitoring.
+- Tracks LLM calls, tool executions, retrieval steps, and agent decisions.
+- Enables debugging and performance analysis of the complete LangGraph workflow.
+  ---
 
 ## Tech Stack
 
@@ -37,6 +45,7 @@ The chatbot allows users to upload PDF documents, ask context-aware questions, p
 * **PyPDFLoader** – PDF processing
 * **SQLite** – Persistent memory
 * **Streamlit** – Frontend UI
+* **LangSmith** - Observability and Tracing
 
 ---
 
