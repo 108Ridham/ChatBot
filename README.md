@@ -1,23 +1,22 @@
 # LangGraph PDF RAG Chatbot
 
-An intelligent PDF-based Retrieval-Augmented Generation (RAG) chatbot built using **LangGraph**, **Groq LLMs**, **FAISS**, **Hugging Face Embeddings**, and **Streamlit**.
+An intelligent PDF-based Retrieval-Augmented Generation (RAG) chatbot built using **LangGraph**, **Groq LLMs**, **FAISS**, **Hugging Face Embeddings**, **LangSmith**, and **Streamlit**.
 
 The chatbot allows users to upload PDF documents, ask context-aware questions, perform web-assisted searches, and maintain persistent conversations through a modern chat interface.
 
-> **Note:** This is a lightweight Agentic AI project created for learning and portfolio purposes. It demonstrates RAG, tool calling, and conversational memory, but is not intended to handle highly complex autonomous tasks.
+> **Note:** This is a lightweight Agentic AI project created for learning and portfolio purposes. It demonstrates RAG, tool calling, conversational memory, observability, and agent orchestration, but is not intended to handle highly complex autonomous tasks.
 
 ---
 
 ## Features
+
+### Core Capabilities
 
 * PDF-based Question Answering using RAG
 * LangGraph-powered Agentic Workflow
 * Persistent Conversation Memory with SQLite
 * Automatic Chat Title Generation
 * Real-Time Streaming Responses
-* Tool Calling Support
-* Interactive Streamlit Interface
-* LangSmith-Based Tracing & Monitoring
 * Interactive Streamlit Interface
 
 ### Available Tools
@@ -27,13 +26,13 @@ The chatbot allows users to upload PDF documents, ask context-aware questions, p
 * **Calculator Tool** – Performs arithmetic calculations.
 * **Stock Price Tool** – Retrieves real-time stock prices.
 
----
-
 ### Observability & Monitoring
-- Integrated LangSmith tracing for end-to-end workflow monitoring.
-- Tracks LLM calls, tool executions, retrieval steps, and agent decisions.
-- Enables debugging and performance analysis of the complete LangGraph workflow.
-  ---
+
+* End-to-end workflow tracing using **LangSmith**.
+* Monitor LLM calls, retrieval steps, tool executions, and agent decisions.
+* Simplifies debugging and performance analysis of the chatbot workflow.
+
+---
 
 ## Tech Stack
 
@@ -43,9 +42,9 @@ The chatbot allows users to upload PDF documents, ask context-aware questions, p
 * **Hugging Face Embeddings** – Semantic search
 * **FAISS** – Vector database
 * **PyPDFLoader** – PDF processing
-* **SQLite** – Persistent memory
+* **SQLite** – Persistent memory and chat history
+* **LangSmith** – Tracing, monitoring, and debugging
 * **Streamlit** – Frontend UI
-* **LangSmith** - Observability and Tracing
 
 ---
 
@@ -80,11 +79,14 @@ pip install faiss-cpu
 Create a `.env` file:
 
 ```env
+# Required
 GROQ_API_KEY=your_groq_api_key
 
-# Optional
+# Optional - LangSmith Tracing
 LANGSMITH_TRACING_V2=true
+LANGSMITH_ENDPOINT=https://api.smith.langchain.com
 LANGSMITH_API_KEY=your_langsmith_api_key
+LANGSMITH_PROJECT=Chatbot
 ```
 
 ### Run the Application
@@ -97,7 +99,7 @@ streamlit run rag_frontend.py
 
 ## Limitations
 
-* Supports only four tools:
+* Supports a limited set of tools:
 
   * PDF Retrieval
   * Web Search
@@ -106,7 +108,9 @@ streamlit run rag_frontend.py
 
 * Designed as a mini Agentic AI project rather than a production-grade AI assistant.
 
-* Does not support multi-agent collaboration, code execution, or advanced workflow automation.
+* Does not support multi-agent collaboration or advanced workflow automation.
+
+* Not intended for highly complex autonomous tasks.
 
 * Performance depends on the selected LLM and the quality of retrieved document context.
 
@@ -119,8 +123,10 @@ This project demonstrates practical experience with:
 * Retrieval-Augmented Generation (RAG)
 * Agentic AI Workflows
 * LangGraph
+* LangChain
 * Tool Calling
 * Vector Databases (FAISS)
 * LLM Integration
 * Conversational Memory
+* LangSmith Observability & Tracing
 * Streamlit Application Development
